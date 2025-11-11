@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Презентации для скачивания</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .presentations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .presentation-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .presentation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .preview-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .presentation-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .presentation-description {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .presentations-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Библиотека презентаций</h1>
+            <p class="subtitle">Выберите интересующую презентацию и скачайте её одним кликом</p>
+        </header>
+
+        <div class="presentations-grid">
+            <!-- Презентация 1 -->
+            <div class="presentation-card" onclick="downloadPresentation('presentation1')">
+                <img src="proba.png" alt="Презентация 1" class="preview-image">
+                <div class="card-content">
+                    <h3 class="presentation-title">Маркетинговая стратегия 2023</h3>
+                    <p class="presentation-description">Обзор ключевых трендов и стратегий в цифровом маркетинге на текущий год.</p>
+                    <a href="qwe.pptx" class="download-btn" onclick="event.stopPropagation(); downloadPresentation('presentation1')">Скачать PPTX</a>
+                </div>
+            </div>
+
+            <!-- Презентация 2 -->
+            <div class="presentation-card" onclick="downloadPresentation('presentation2')">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Презентация 2" class="preview-image">
+                <div class="card-content">
+                    <h3 class="presentation-title">Анализ данных и визуализация</h3>
+                    <p class="presentation-description">Методы анализа больших данных и создание эффективных визуализаций.</p>
+                    <a href="#" class="download-btn" onclick="event.stopPropagation(); downloadPresentation('presentation2')">Скачать PPTX</a>
+                </div>
+            </div>
+
+            <!-- Презентация 3 -->
+            <div class="presentation-card" onclick="downloadPresentation('presentation3')">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Презентация 3" class="preview-image">
+                <div class="card-content">
+                    <h3 class="presentation-title">Управление проектами</h3>
+                    <p class="presentation-description">Современные подходы к управлению проектами и повышению эффективности команд.</p>
+                    <a href="#" class="download-btn" onclick="event.stopPropagation(); downloadPresentation('presentation3')">Скачать PPTX</a>
+                </div>
+            </div>
+
+            <!-- Презентация 4 -->
+            <div class="presentation-card" onclick="downloadPresentation('presentation4')">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Презентация 4" class="preview-image">
+                <div class="card-content">
+                    <h3 class="presentation-title">Искусственный интеллект в бизнесе</h3>
+                    <p class="presentation-description">Практические применения AI и машинного обучения в различных отраслях.</p>
+                    <a href="#" class="download-btn" onclick="event.stopPropagation(); downloadPresentation('presentation4')">Скачать PPTX</a>
+                </div>
+            </div>
+
+            <!-- Презентация 5 -->
+            <div class="presentation-card" onclick="downloadPresentation('presentation5')">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Презентация 5" class="preview-image">
+                <div class="card-content">
+                    <h3 class="presentation-title">Дизайн пользовательского опыта</h3>
+                    <p class="presentation-description">Принципы UX/UI дизайна для создания интуитивно понятных интерфейсов.</p>
+                    <a href="#" class="download-btn" onclick="event.stopPropagation(); downloadPresentation('presentation5')">Скачать PPTX</a>
+                </div>
+            </div>
+
+            <!-- Презентация 6 -->
+            <div class="presentation-card" onclick="downloadPresentation('presentation6')">
+                <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Презентация 6" class="preview-image">
+                <div class="card-content">
+                    <h3 class="presentation-title">Цифровая трансформация</h3>
+                    <p class="presentation-description">Как компании адаптируются к цифровой эре и внедряют новые технологии.</p>
+                    <a href="#" class="download-btn" onclick="event.stopPropagation(); downloadPresentation('presentation6')">Скачать PPTX</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2023 Библиотека презентаций. Все права защищены.</p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadPresentation(presentationId) {
+            // В реальном приложении здесь будет ссылка на файл
+            alert(`Начинается загрузка презентации: ${presentationId}.pptx\n\nВ реальном приложении файл будет скачан автоматически.`);
+            
+            // Пример кода для реальной загрузки:
+            // const link = document.createElement('a');
+            // link.href = `path/to/${presentationId}.pptx`;
+            // link.download = `${presentationId}.pptx`;
+            // document.body.appendChild(link);
+            // link.click();
+            // document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
